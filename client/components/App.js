@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from './Nav';
+import Menu from './Menu';
 import { loadDashboards } from '../store';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
+          <Menu />
           <Route path="/" exact component={ Home } />
           <Route path="/dashboards" exact component={ Dashboards } />
           <Route path="/dashboards/:id" exact render={({ match }) => <Dashboard id={match.params.id * 1} /> } />
