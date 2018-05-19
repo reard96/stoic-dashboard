@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PageHeader } from 'react-bootstrap';
+import style from '../../public/style.css';
 
 const Dashboard = ({ dashboard }) => {
   if (!dashboard) {
-    return <h1>We don't have that dashboard!</h1>
+    return (
+      <div className={ style.wrapper }>
+        <PageHeader>We don't have that dashboard!</PageHeader>
+      </div>
+    );
   }
   return (
-    <h1>{ dashboard.goal }</h1>
+    <PageHeader>{ dashboard.goal }</PageHeader>
   );
 };
 
