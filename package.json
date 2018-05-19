@@ -7,11 +7,15 @@
     "postinstall": "npm run webpack",
     "webpack": "./node_modules/webpack/bin/webpack.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "npm run webpack -- -w & nodemon server.js --ignore dist/ --ignore src/"
+    "start:dev": "npm run webpack -- -w & nodemon server/index.js --ignore dist/ --ignore src/"
   },
   "keywords": [],
   "author": "Dan Reardon",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/reard96/stoic-dashboard.git"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
@@ -31,8 +35,5 @@
     "sequelize": "^4.35.1",
     "webpack": "^3.11.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/reard96/stoic-dashboard.git"
-  }
+  "devDependencies": {}
 }
