@@ -19,18 +19,3 @@ db.sync()
   .then(() => db.seed());
 
 module.exports = app;
-
-// const conn = require('./db/conn');
-
-// const Dashboard = require('./db/models/Dashboard');
-
-// conn.sync({ force: true })
-//   .then(() => {
-//     return Promise.all([
-//       Dashboard.create({ goal: 'exercise' }),
-//       Dashboard.create({ goal: 'practice reduce '}),
-//       Dashboard.create({ goal: 'foo, bar, baz'})
-//     ]);
-//   });
-
-

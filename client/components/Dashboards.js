@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Dashboards = ({ dashboards }) => {
   return (
@@ -8,7 +9,7 @@ const Dashboards = ({ dashboards }) => {
       dashboards.map(dashboard => {
         return (
           <li key={ dashboard.id }>
-            { dashboard.goal }
+            <Link to={`dashboards/${dashboard.id}`}>{ dashboard.goal }</Link>
           </li>
         );
       })
