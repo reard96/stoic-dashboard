@@ -10,12 +10,9 @@ app.use(require('body-parser').json());
 
 const port = process.env.PORT || 3000;
 
-const Sequelize = require('sequelize');
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/stoic_dashboard');
+const conn = require('./db/conn');
 
-const Dashboard = conn.define('dashboard', {
-  goal: Sequelize.STRING
-});
+const Dashboard = require('./db/models/Dashboard');
 
 app.get('/api/dashboards', (req, res, next) => {
   Dashboard.findAll()
