@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import { loadDashboards } from './store';
 import { connect } from 'react-redux';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import Home from './Home';
+import Dashboards from './Dashboards';
 
 class App extends Component {
   componentDidMount() {
@@ -9,7 +12,13 @@ class App extends Component {
   }
   render() {
     return (
-      <Nav />
+      <Router>
+        <div>
+          <Nav />
+          <Route path="/" exact component={ Home } />
+          <Route path="/dashboards" exact component={ Dashboards } />
+        </div>
+      </Router>
     );
   }
 }

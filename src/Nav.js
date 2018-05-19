@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Nav = ({ dashboards }) => {
   return (
     <ul>
       <li>
-        Home
+        <Link to="/">Home</Link>
       </li>
       <li>
-        Dashboards: ({ dashboards.length })
+        <Link to="/dashboards">Dashboards: ({ dashboards.length })</Link>
       </li>
     </ul>
   );
