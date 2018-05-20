@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import d3 from 'd3';
 
 import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';

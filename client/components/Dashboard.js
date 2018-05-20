@@ -4,6 +4,9 @@ import { PageHeader } from 'react-bootstrap';
 import { saveDashboard } from '../store';
 import style from '../../public/style.css';
 
+// heatmap
+import CalendarHeatmap from 'react-calendar-heatmap';
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -42,10 +45,26 @@ class Dashboard extends Component {
     return (
       <div className={ style.wrapper }>
         <PageHeader>{ dashboard.goal }</PageHeader>
-        <form onSubmit={ onUpdate }>
+        <form onSubmit={ onUpdate } className={style.input}>
           <input value={ goal } onChange={ onChangeGoal } />
           <button>Update Goal</button>
         </form>
+        <CalendarHeatmap
+          startDate={new Date('2018-01-01')}
+          endDate={new Date('2018-06-01')}
+          values={[
+            { date: '2016-01-01', count: 1 },
+            { date: '2016-01-22', count: 3 },
+            { date: '2016-01-30', count: 4 },
+            // ...and so on
+          ]}
+          classForValue={(value) => {
+            if (!value) {
+              return 'color-empty';
+            }
+            return `color-scale-${value.count}`;
+          }}
+        />
       </div>
     );
   }
