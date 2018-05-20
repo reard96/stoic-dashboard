@@ -14,9 +14,12 @@ const Menu = ({ dashboards }) => {
         </LinkContainer>
       <Navbar.Toggle />
       </Navbar.Header>
-      <Nav>
+      <Nav pullRight>
         <LinkContainer to="/dashboards">
           <NavItem>Dashboards: ({ dashboards.length })</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/dashboards/create">
+          <NavItem>Create a Dashboard</NavItem>
         </LinkContainer>
       </Nav>
     </Navbar>

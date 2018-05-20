@@ -35,7 +35,7 @@ export const saveDashboard = (dashboard, history) => {
     };
   }
   return (dispatch) => {
-    return axios.post('/api/dashboards', dashboards)
+    return axios.post('/api/dashboards', dashboard)
       .then(result => result.data)
       .then(dashboards => dispatch({
         type: CREATE_DASHBOARD,

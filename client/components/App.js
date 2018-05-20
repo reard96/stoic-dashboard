@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Menu from './Menu';
 import { loadDashboards, loadUsers } from '../store';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Dashboards from './Dashboards';
 import Dashboard from './Dashboard';
+import CreateDashboard from './CreateDashboard';
 
 class App extends Component {
   componentDidMount() {
@@ -19,7 +20,10 @@ class App extends Component {
           <Menu />
           <Route path="/" exact component={ Home } />
           <Route path="/dashboards" exact component={ Dashboards } />
-          <Route path="/dashboards/:id" exact render={({ match, history }) => <Dashboard id={match.params.id * 1} history={ history } /> } />
+          <Switch>
+            <Route path="/dashboards/create" exact render={({ history }) => <CreateDashboard history={ history } />} />
+            <Route path="/dashboards/:id" exact render={({ match, history }) => <Dashboard id={match.params.id * 1} history={ history } /> } />
+          </Switch>
         </div>
       </Router>
     );

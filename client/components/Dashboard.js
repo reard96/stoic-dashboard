@@ -12,7 +12,7 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      goal: this.props.dashboard ? this.props.dashboard.goal : 'New goal here'
+      goal: this.props.dashboard ? this.props.dashboard.goal : ''
     };
     this.onChangeGoal = this.onChangeGoal.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
@@ -67,9 +67,9 @@ class Dashboard extends Component {
     return (
       <div className="wrapper">
         <PageHeader>{ dashboard.goal }</PageHeader>
-        <form onSubmit={ onUpdate } className="input">
+        <form className="input" onSubmit={ onUpdate }>
           <input value={ goal } onChange={ onChangeGoal } />
-          <button>Update Goal</button>
+          <button className="btn btn-success">Update Goal</button>
         </form>
         <CalendarHeatmap
           startDate={new Date('2018-01-01')}
