@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Menu from './Menu';
-import { loadDashboards } from '../store';
+import { loadDashboards, loadUsers } from '../store';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
@@ -10,6 +10,7 @@ import Dashboard from './Dashboard';
 class App extends Component {
   componentDidMount() {
     this.props.loadDashboards();
+    this.props.loadUsers();
   }
   render() {
     return (
@@ -27,7 +28,8 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loadDashboards: () => dispatch(loadDashboards())
+    loadDashboards: () => dispatch(loadDashboards()),
+    loadUsers: () => dispatch(loadUsers())
   };
 };
 

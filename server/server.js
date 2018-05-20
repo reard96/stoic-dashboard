@@ -5,9 +5,11 @@ const db = require('./db');
 
 app.use(require('body-parser').json());
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
-// app.use PUBLIC
+app.use('/public', express.static(path.join(__dirname, '../public')));
 
-app.use('/api', require('./api/dashboards'));
+// Routing
+app.use('/api', require('./api'));
+//app.use('/api/users', require('./api/users'));
 
 app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '../public/index.html')));
 

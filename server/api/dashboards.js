@@ -4,19 +4,19 @@ const { Dashboard } = db.models;
 
 module.exports = app;
 
-app.get('/dashboards', (req, res, next) => {
+app.get('/', (req, res, next) => {
   Dashboard.findAll()
     .then(dashboards => res.send(dashboards))
     .catch(next);
 });
 
-app.post('/dashboards', (req, res, next) => {
+app.post('/', (req, res, next) => {
   Dashboard.create(req.body)
     .then(dashboard => res.send(dashboard))
     .catch(next);
 });
 
-app.put('/dashboards/:id', (req, res, next) => {
+app.put('/:id', (req, res, next) => {
   Dashboard.findById(req.params.id)
     .then(dashboard => {
       Object.assign(dashboard, req.body);
@@ -26,7 +26,7 @@ app.put('/dashboards/:id', (req, res, next) => {
     .catch(next);
 });
 
-app.delete('/dashboards/:id', (req, res, next) => {
+app.delete('/:id', (req, res, next) => {
   Dashboard.findById(req.params.id)
     .then(dashboard => {
       return dashboard.destroy();
