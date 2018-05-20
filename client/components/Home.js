@@ -1,6 +1,12 @@
 import React from 'react';
 import moment from 'moment';
+
+/*
+this is hardcoded, to improve either build yourself
+or use Twitter api
+*/
 import d3 from 'd3';
+import TweetEmbed from 'react-tweet-embed'
 
 import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';
@@ -31,6 +37,8 @@ const Home = ({ user }) => {
       <h4>Today is: { today }</h4>
       <h4>You have been alive for { diff } days</h4>
       <h4>Assuming you'll live to 90, you have { timeLeft } days left</h4>
+      <h4>Here's how much time you have on your annual goals:</h4>
+      <TweetEmbed id="997884591653433344" />
     </div>
   );
 };
