@@ -4,7 +4,7 @@ import d3 from 'd3';
 
 import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';
-import style from '../../public/style.css';
+//import style from '../../public/style.css';
 
 const Home = ({ user }) => {
   // hardcoding for now - Moment objects
@@ -19,13 +19,13 @@ const Home = ({ user }) => {
   const timeLeft = 90 * 365 - diff;
   if (!user) {
     return (
-      <div className={ style.wrapper }>
+      <div className="wrapper">
         <PageHeader>We don't have that user!</PageHeader>
       </div>
     );
   }
   return (
-    <div className={ style.wrapper }>
+    <div className="wrapper">
       <PageHeader>Hello, { user.name }</PageHeader>
       <h4>You were born on: { dob }</h4>
       <h4>Today is: { today }</h4>

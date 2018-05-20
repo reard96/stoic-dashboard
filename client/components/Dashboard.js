@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';
 import { saveDashboard } from '../store';
-import style from '../../public/style.css';
+//import style from '../../public/style.css';
 
 // heatmap
 import CalendarHeatmap from 'react-calendar-heatmap';
@@ -37,15 +37,15 @@ class Dashboard extends Component {
 
     if (!dashboard) {
       return (
-        <div className={ style.wrapper }>
+        <div className="wrapper">
           <PageHeader>We don't have that dashboard!</PageHeader>
         </div>
       );
     }
     return (
-      <div className={ style.wrapper }>
+      <div className="wrapper">
         <PageHeader>{ dashboard.goal }</PageHeader>
-        <form onSubmit={ onUpdate } className={style.input}>
+        <form onSubmit={ onUpdate } className="input">
           <input value={ goal } onChange={ onChangeGoal } />
           <button>Update Goal</button>
         </form>
@@ -58,11 +58,12 @@ class Dashboard extends Component {
             { date: '2016-01-30', count: 4 },
             // ...and so on
           ]}
+          showOutOfRangeDays={true}
           classForValue={(value) => {
             if (!value) {
-              return 'color-empty';
+              return 'react-calendar-heatmap color-empty';
             }
-            return `color-scale-${value.count}`;
+            return `react-calendar-heatmap color-github-${value.count}`;
           }}
         />
       </div>
