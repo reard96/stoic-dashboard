@@ -66,7 +66,7 @@ export const deleteUser = (user, history) => {
 const reducer = (state = [], action) => {
   switch (action.type) {
     case SET_USERS:
-      state = action.USERS;
+      state = action.users;
       break;
     case UPDATE_USER:
       state = state.map(user => user.id === action.user.id ? action.user : user);

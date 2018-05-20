@@ -6,6 +6,8 @@ A simple dashboard for productivity, with a Stoic flavor.
 
 ## Issues & To-Dos
 * [ ] Add favicon (this is annoying with Webpack)
+* [ ] Sequelize issue with dates
+* [ ] d3 visualizations
 * [ ] Add users & authentication
 
 ## Contribute

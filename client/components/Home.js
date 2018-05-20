@@ -14,12 +14,14 @@ const Home = ({ user }) => {
   return (
     <div className={ style.wrapper }>
       <PageHeader>Hello, { user.name }</PageHeader>
+      <div>You were born on { user.birthday }</div>
     </div>
   );
 };
 
 const mapStateToProps = ({ users }) => {
-  const user = users.find(user => user.id === 1);
+  // Just have one user for the purposes of this demonstration.
+  const user = users[0];
   return {
     user
   };
