@@ -18,7 +18,7 @@ class App extends Component {
           <Menu />
           <Route path="/" exact component={ Home } />
           <Route path="/dashboards" exact component={ Dashboards } />
-          <Route path="/dashboards/:id" exact render={({ match }) => <Dashboard id={match.params.id * 1} /> } />
+          <Route path="/dashboards/:id" exact render={({ match, history }) => <Dashboard id={match.params.id * 1} history={ history } /> } />
         </div>
       </Router>
     );
