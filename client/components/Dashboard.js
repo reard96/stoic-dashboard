@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';
 import { saveDashboard } from '../store';
 //import style from '../../public/style.css';
+import moment from 'moment';
 
 // heatmap
 import CalendarHeatmap from 'react-calendar-heatmap';
@@ -30,6 +31,27 @@ class Dashboard extends Component {
     this.setState({ goal: nextProps.dashboard ? nextProps.dashboard.goal : '' });
   }
 
+  // helpers to visualize data
+  // getRandomInt(min, max) {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // }
+  // getDates(startDate, stopDate) {
+  //   const dateArray = [];
+  //   let currentDate = moment(startDate);
+  //   const endDate = moment(stopDate);
+  //   while (currentDate <= endDate) {
+  //     let newDate = Object.assign({
+
+  //     })
+  //     dateArray.push({
+  //       moment(currentDate).format('YYYY-MM-DD'),
+  //       getRandomInt(1, 3)
+  //     });
+  //     currentDate = moment(currentDate).add(1, 'days');
+  //   }
+  //   return dateArray;
+  // }
+
   render() {
     const { dashboard } = this.props;
     const { goal } = this.state;
@@ -53,9 +75,15 @@ class Dashboard extends Component {
           startDate={new Date('2018-01-01')}
           endDate={new Date('2018-06-01')}
           values={[
-            { date: '2016-01-01', count: 1 },
-            { date: '2016-01-22', count: 3 },
-            { date: '2016-01-30', count: 4 },
+            { date: '2018-01-01', count: 1 },
+            { date: '2018-01-22', count: 3 },
+            { date: '2018-01-30', count: 2 },
+            { date: '2018-02-02', count: 1 },
+            { date: '2018-02-20', count: 3 },
+            { date: '2018-02-28', count: 2 },
+            { date: '2018-04-03', count: 1 },
+            { date: '2018-04-22', count: 3 },
+            { date: '2018-05-09', count: 2 }
             // ...and so on
           ]}
           showOutOfRangeDays={true}
