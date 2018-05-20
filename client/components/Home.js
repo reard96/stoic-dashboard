@@ -1,9 +1,21 @@
 import React from 'react';
+import moment from 'moment';
+
 import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';
 import style from '../../public/style.css';
 
 const Home = ({ user }) => {
+  // hardcoding for now - Moment objects
+  const birthday = moment('1993-05-09');
+  const now = moment();
+
+  // Date strings
+  const dob = birthday.format('MM-DD-YYYY');
+  const today = now.format('MM-DD-YYYY');
+  const diff = now.diff(birthday, 'days');
+  // Ignore leap years
+  const timeLeft = 90 * 365 - diff;
   if (!user) {
     return (
       <div className={ style.wrapper }>
@@ -14,7 +26,10 @@ const Home = ({ user }) => {
   return (
     <div className={ style.wrapper }>
       <PageHeader>Hello, { user.name }</PageHeader>
-      <div>You were born on { user.birthday }</div>
+      <h4>You were born on: { dob }</h4>
+      <h4>Today is: { today }</h4>
+      <h4>You have been alive for { diff } days</h4>
+      <h4>Assuming you'll live to 90, you have { timeLeft } days left</h4>
     </div>
   );
 };
