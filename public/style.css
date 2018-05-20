@@ -9,6 +9,13 @@
   margin: 2em;
 }
 
+/* Progress bar */
+.progressBar {
+  margin-top: 1em;
+  align-self: stretch;
+  min-width: 500px;
+}
+
 /* React calendar styling */
 .react-calendar-heatmap text {
   font-size: 10px;
