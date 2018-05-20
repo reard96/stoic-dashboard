@@ -87,13 +87,17 @@ class Dashboard extends Component {
             // ...and so on
           ]}
           showOutOfRangeDays={true}
+          showWeekdayLabels={true}
           classForValue={(value) => {
             if (!value) {
               return 'react-calendar-heatmap color-empty';
             }
             return `react-calendar-heatmap color${value.count}`;
           }}
-          onClick={ (value) => { alert(value.count) } }
+          onClick={ (value) => { alert(
+            `Your score: ${
+              Math.floor((value.count / 4) * 100) }%`
+          ) } }
         />
       </div>
     );
