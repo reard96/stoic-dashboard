@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PageHeader } from 'react-bootstrap';
 import { saveDashboard } from '../store';
-//import style from '../../public/style.css';
-import moment from 'moment';
+// import moment from 'moment';
 
 // heatmap
 import CalendarHeatmap from 'react-calendar-heatmap';

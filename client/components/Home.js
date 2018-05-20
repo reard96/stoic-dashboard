@@ -5,7 +5,7 @@ import moment from 'moment';
 this is hardcoded, to improve either build yourself
 or use Twitter api
 */
-import d3 from 'd3';
+// import d3 from 'd3';
 import TweetEmbed from 'react-tweet-embed';
 
 import { connect } from 'react-redux';
@@ -33,6 +33,8 @@ const Home = ({ user }) => {
     return (
       <div className="wrapper">
         <PageHeader>Hello, { user.name }</PageHeader>
+        <h2>Be like Nike and JUST DO IT</h2>
+        <img src="/public/img/swoosh.jpg" style={{width: '20%', height: 'auto' }} />
         <h4>You were born on: { dob }</h4>
         <h4>Today is: { today }</h4>
         <h4>You have been alive for <Label bsStyle="warning">{ diff }</Label> days</h4>

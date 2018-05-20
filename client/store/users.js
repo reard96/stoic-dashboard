@@ -35,7 +35,7 @@ export const saveUsers = (user, history) => {
     };
   }
   return (dispatch) => {
-    return axios.post('/api/users', users)
+    return axios.post('/api/users', user)
       .then(result => result.data)
       .then(users => dispatch({
         type: CREATE_USER,
