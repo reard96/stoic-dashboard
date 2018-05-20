@@ -81,7 +81,7 @@ class Dashboard extends Component {
             { date: '2018-02-02', count: 1 },
             { date: '2018-02-20', count: 3 },
             { date: '2018-02-28', count: 2 },
-            { date: '2018-04-03', count: 1 },
+            { date: '2018-04-03', count: 4 },
             { date: '2018-04-22', count: 3 },
             { date: '2018-05-09', count: 2 }
             // ...and so on
@@ -91,8 +91,9 @@ class Dashboard extends Component {
             if (!value) {
               return 'react-calendar-heatmap color-empty';
             }
-            return `react-calendar-heatmap color-github-${value.count}`;
+            return `react-calendar-heatmap color${value.count}`;
           }}
+          onClick={ (value) => { alert(value.count) } }
         />
       </div>
     );
